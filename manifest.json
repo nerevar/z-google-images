@@ -14,5 +14,5 @@
         "48": "images/images-favicon-48x48.png"
     },
     "manifest_version": 2,
-    "update_url": "https://raw.githubusercontent.com/nerevar/z-google-images/releases/update_manifest.xml"
+    "update_url": "https://github.com/nerevar/z-google-images/raw/releases/update_manifest.xml"
 }

@@ -13,8 +13,8 @@ test::
 release::
 	$(BROWSER) --pack-extension=$(CURDIR) --pack-extension-key=$(realpath ../)/z-google-images.pem
 	git clone -b releases $(GIT_REPO) $(RELEASE_DIR)
-	cp ../$(CRX).crx $(RELEASE_DIR)versions/startrek.latest.crx
-	cp ../$(CRX).crx $(RELEASE_DIR)versions/startrek.$(VERSION).crx
+	cp ../$(CRX).crx $(RELEASE_DIR)versions/$(NAME).latest.crx
+	cp ../$(CRX).crx $(RELEASE_DIR)versions/$(NAME).$(VERSION).crx
 	cd $(RELEASE_DIR) && sed -i .back -E 's/([0-9]\.){2}[0-9]{1,2}/$(VERSION)/g' update_manifest.xml
 	cd $(RELEASE_DIR) && rm -rf *.back
 	cd $(RELEASE_DIR) && git add .

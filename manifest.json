@@ -1,14 +1,14 @@
 {
-	"name": "z-google-images",
-	"version": "1.0.1",
-	"description": "Replace links from Google Images to Yandex Images",
-	"content_scripts": [{
-		"matches": [
-			"http://www.google.com/*",
-			"https://www.google.com/*"
-		],
-		"js": ["contentscript.js"],
-		"run_at": "document_end"
-	}],
-	"manifest_version": 2
+    "name": "z-google-images",
+    "version": "0.0.2",
+    "description": "Replace links from Google Images to Yandex Images",
+    "content_scripts": [{
+        "matches": [
+            "http://www.google.com/*",
+            "https://www.google.com/*"
+        ],
+        "js": ["contentscript.js"],
+        "run_at": "document_end"
+    }],
+    "manifest_version": 2
 }

@@ -10,5 +10,8 @@
         "js": ["contentscript.js"],
         "run_at": "document_end"
     }],
+    "icons": {
+        "48": "images/images-favicon-48x48.png"
+    },
     "manifest_version": 2
 }

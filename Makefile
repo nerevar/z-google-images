@@ -3,7 +3,7 @@ RELEASE_DIR=release/
 BROWSER=/Applications/Yandex.app/Contents/MacOS/Yandex
 GIT_REPO=git@github.com:nerevar/z-google-images.git
 
-VERSION?=$(shell cat manifest.json | awk -F '[" .]' '/"version"/ { print $$9"."$$10"."$$11+1}')
+VERSION:=$(shell cat manifest.json | awk -F '[" .]' '/"version"/ { print $$9"."$$10"."$$11+1}')
 
 .PHONY: test release clean inc
 

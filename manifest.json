@@ -1,6 +1,6 @@
 {
     "name": "z-google-images",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "Replace links from Google Images to Yandex Images",
     "content_scripts": [{
         "matches": [

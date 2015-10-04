@@ -10,11 +10,14 @@ VERSION?=$(shell cat manifest.json | awk -F '[" .]' '/"version"/ { print $$9"."$
 test::
 	@echo $(VERSION)
 
-release::
+clean:
+	-rm -rf $(RELEASE_DIR)
+
+release:: clean
 	$(BROWSER) --pack-extension=$(CURDIR) --pack-extension-key=$(realpath ../)/z-google-images.pem
 	git clone -b releases $(GIT_REPO) $(RELEASE_DIR)
-	cp ../$(CRX).crx $(RELEASE_DIR)versions/$(NAME).latest.crx
-	cp ../$(CRX).crx $(RELEASE_DIR)versions/$(NAME).$(VERSION).crx
+	cp ../$(NAME).crx $(RELEASE_DIR)versions/$(NAME).latest.crx
+	cp ../$(NAME).crx $(RELEASE_DIR)versions/$(NAME).$(VERSION).crx
 	cd $(RELEASE_DIR) && sed -i .back -E 's/([0-9]\.){2}[0-9]{1,2}/$(VERSION)/g' update_manifest.xml
 	cd $(RELEASE_DIR) && rm -rf *.back
 	cd $(RELEASE_DIR) && git add .

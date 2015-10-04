@@ -4,8 +4,8 @@
     "description": "Replace links from Google Images to Yandex Images",
     "content_scripts": [{
         "matches": [
-            "http://www.google.com/*",
-            "https://www.google.com/*"
+            "*://*.google.com/*",
+            "*://*.google.ru/*"
         ],
         "js": ["contentscript.js"],
         "run_at": "document_end"
